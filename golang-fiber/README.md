@@ -1,8 +1,8 @@
-# **Golang + Gin + Brage**
+# **Golang + Fiber + Brage**
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) ![Gin](https://img.shields.io/badge/Gin-000000?style=for-the-badge) ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white) ![Fiber](https://img.shields.io/badge/Fiber-000000?style=for-the-badge) ![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
 
-#### Minimal setup to get Gin and MySQL working with Brage in Go.
+#### Minimal setup to get Fiber and MySQL working with Brage in Go.
 
 ##### Start creating new routes in the **_app_** folder [see the README file in app]
 
