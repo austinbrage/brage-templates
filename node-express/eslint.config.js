@@ -18,9 +18,24 @@ export default [
                     argsIgnorePattern: '^_',
                 },
             ],
-            'import/no-unresolved': ['error'],
+            'import/no-unresolved': ['error', { ignore: ['vitest/config'] }],
             'import/named': ['error'],
             'import/default': ['error'],
+            'import/extensions': [
+                'warn',
+                'always',
+                {
+                    js: 'always',
+                    ignorePackages: true,
+                },
+            ],
+        },
+        settings: {
+            'import/resolver': {
+                node: {
+                    extensions: ['.js', '.json', '.node'],
+                },
+            },
         },
     },
 ];
