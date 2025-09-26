@@ -1,0 +1,28 @@
+{
+  "getAll": {
+    "fields": []
+  },
+  "getByID": {
+    "fields": [
+      "id"
+    ]
+  },
+  "addNew": {
+    "fields": [
+      "name",
+      "email"
+    ]
+  },
+  "changeAll": {
+    "fields": [
+      "name",
+      "email",
+      "id"
+    ]
+  },
+  "remove": {
+    "fields": [
+      "id"
+    ]
+  }
+}

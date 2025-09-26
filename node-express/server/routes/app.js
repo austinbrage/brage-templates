@@ -4,9 +4,13 @@ import express, { json, Router } from 'express';
 import corsMiddleware from '../global/middlewares/cors.js';
 import errorMiddleware from '../global/middlewares/error.js';
 import createHealthcareRouter from './healthcare/healthcare.router.js';
+import createUsersRouter from './users/users.router.js';
 import { notFoundHandler } from '../global/handlers/notFound.js';
 
-const createApp = ({ pingPool }) => {
+const createApp = ({
+    pingPool,
+    usersModel,
+}) => {
     const app = express();
     const mainRouter = Router();
 
@@ -16,12 +20,13 @@ const createApp = ({ pingPool }) => {
     app.use(corsMiddleware());
 
     mainRouter.use('/ping', createHealthcareRouter({ pingPool }));
+    mainRouter.use('/users', createUsersRouter({ usersModel }));
 
     app.use('/app', mainRouter);
     app.all('*', notFoundHandler);
     app.use(errorMiddleware);
 
     return app;
-};
+}
 
 export default createApp;
