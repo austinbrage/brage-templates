@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+import { config } from 'dotenv';
 
 config();
 
@@ -19,8 +19,8 @@ export const ENVIRONMENT = process.env.NODE_ENV ?? 'production';
 export const PORT = {
     development: process.env.DEV_PORT ?? 3000,
     production: process.env.PROD_PORT ?? 3001,
-    test: process.env.TEST_PORT ?? 3002
-} 
+    test: process.env.TEST_PORT ?? 3002,
+};
 
 export const DB_CONFIG = {
     development: {
@@ -44,4 +44,4 @@ export const DB_CONFIG = {
         password: process.env.TEST_DB_PASSWORD,
         database: process.env.TEST_DB_DATABASE,
     },
-}
+};

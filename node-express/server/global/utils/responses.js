@@ -4,19 +4,18 @@ export const createOkResponse = ({ message, token, data }) => {
         result: {
             message: message,
             data: data ? data : null,
-            token: token ? token : null
-        }
-    }
-}
+            token: token ? token : null,
+        },
+    };
+};
 
 export const createErrorResponse = ({ message, error }) => {
-
     return {
         success: false,
         error: {
             status: 'fail',
             message: message,
-            validationError: error ? error : null
-        }
-    }
-}
+            validationError: error ? error : null,
+        },
+    };
+};

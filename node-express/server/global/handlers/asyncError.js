@@ -6,5 +6,5 @@ export const asyncErrorHandler = (func) => {
             console.error(err);
             next(err);
         }
-    }
-}
+    };
+};

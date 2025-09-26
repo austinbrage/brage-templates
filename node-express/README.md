@@ -32,5 +32,5 @@
 > When the template is created, it has an ARTICLES FOLDER to test the brage tool, run the following command
 >
 > ```
-> brage create
+> brage routes
 > ```
