@@ -18,7 +18,7 @@ class UsersController {
     });
 
     getByID = asyncErrorHandler(async (req, res) => {
-        const data = await this.usersModel.getByID(req.sanitizedData);
+        const data = await this.usersModel.getByID(req.validatedData);
 
         return res.status(200).json(
             createOkResponse({
@@ -29,7 +29,7 @@ class UsersController {
     });
 
     addNew = asyncErrorHandler(async (req, res) => {
-        const data = await this.usersModel.addNew(req.sanitizedData);
+        const data = await this.usersModel.addNew(req.validatedData);
 
         return res.status(201).json(
             createOkResponse({
@@ -40,7 +40,7 @@ class UsersController {
     });
 
     changeAll = asyncErrorHandler(async (req, res) => {
-        const data = await this.usersModel.changeAll(req.sanitizedData);
+        const data = await this.usersModel.changeAll(req.validatedData);
 
         return res.status(200).json(
             createOkResponse({
@@ -51,7 +51,7 @@ class UsersController {
     });
 
     remove = asyncErrorHandler(async (req, res) => {
-        const data = await this.usersModel.remove(req.sanitizedData);
+        const data = await this.usersModel.remove(req.validatedData);
 
         return res.status(200).json(
             createOkResponse({

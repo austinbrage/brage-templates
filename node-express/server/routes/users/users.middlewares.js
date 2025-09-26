@@ -1,7 +1,7 @@
 import { createErrorResponse } from './../../global/utils/responses.js';
 import { UsersStringValidation, UsersValidation } from './users.validations.js';
 
-class SanitizeRequests {
+class ValidateRequests {
     constructor() {
         this.validateUsers = new UsersValidation();
         this.validateStringUsers = new UsersStringValidation();
@@ -21,17 +21,17 @@ class SanitizeRequests {
         let validation = this.validateStringUsers.getByID(req.query);
         if (!validation.success) return this.validationErr(res, validation.error);
 
-        // 2. Convert to the correct types
-        const convertedData = {};
+        // 2. Sanitize with the correct types
+        const sanitizedData = {};
 
         // ➡️ id goes from string to number
-        convertedData.id = parseInt(validation.data.id, 10);
+        sanitizedData.id = parseInt(validation.data.id, 10);
 
         // 3. Validate the correct types
-        validation = this.validateUsers.getByID(convertedData);
+        validation = this.validateUsers.getByID(sanitizedData);
         if (!validation.success) return this.validationErr(res, validation.error);
 
-        req.sanitizedData = validation.data;
+        req.validatedData = validation.data;
 
         next();
     };
@@ -40,7 +40,7 @@ class SanitizeRequests {
         const validation = this.validateUsers.addNew(req.body);
         if (!validation.success) return this.validationErr(res, validation.error);
 
-        req.sanitizedData = validation.data;
+        req.validatedData = validation.data;
 
         next();
     };
@@ -49,7 +49,7 @@ class SanitizeRequests {
         const validation = this.validateUsers.changeAll(req.body);
         if (!validation.success) return this.validationErr(res, validation.error);
 
-        req.sanitizedData = validation.data;
+        req.validatedData = validation.data;
 
         next();
     };
@@ -58,10 +58,10 @@ class SanitizeRequests {
         const validation = this.validateUsers.remove(req.body);
         if (!validation.success) return this.validationErr(res, validation.error);
 
-        req.sanitizedData = validation.data;
+        req.validatedData = validation.data;
 
         next();
     };
 }
 
-export default SanitizeRequests;
+export default ValidateRequests;
