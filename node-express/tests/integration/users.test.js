@@ -3,6 +3,7 @@ import express from 'express';
 import UsersMysql from '../../server/routes/users/users.model.mysql.js';
 import createUsersRouter from '../../server/routes/users/users.router.js';
 import { createPoolConnection } from '../../server/global/utils/database.js';
+import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 describe('Users API Integration', () => {
     let usersPool;
