@@ -13,8 +13,8 @@ const createUsersRouter = ({ usersModel }) => {
     usersRouter.post('/addNew', validate.addNew, usersController.addNew);
     usersRouter.put('/changeAll', validate.changeAll, usersController.changeAll);
     usersRouter.delete('/remove', validate.remove, usersController.remove);
-
+    
     return usersRouter;
-};
+}
 
 export default createUsersRouter;
